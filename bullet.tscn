@@ -16,7 +16,7 @@ shader_parameter/speed = Vector2(0.4, 0.1)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_xma15")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7o4j7"]
-radius = 12.0
+radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wspog"]
 radius = 14.0
