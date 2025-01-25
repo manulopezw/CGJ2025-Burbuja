@@ -1,13 +1,12 @@
-
-[gd_scene load_steps=33 format=3 uid="uid://b16dy7akcdbao"]
+[gd_scene load_steps=34 format=3 uid="uid://b16dy7akcdbao"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_n8vtc"]
 [ext_resource type="Texture2D" uid="uid://dnwvu70rb7eur" path="res://assets/Main Characters/Mask Dude/Jump (32x32).png" id="2_0fyyh"]
 [ext_resource type="Texture2D" uid="uid://c2auw6yffv0j7" path="res://assets/Main Characters/Mask Dude/Idle (32x32).png" id="2_to8x6"]
 [ext_resource type="Texture2D" uid="uid://cclif7giv4h7j" path="res://assets/Main Characters/Mask Dude/Fall (32x32).png" id="3_7lbcf"]
 [ext_resource type="Texture2D" uid="uid://b5rn7qn3wh4rt" path="res://assets/Main Characters/Mask Dude/Run (32x32).png" id="4_7aapb"]
-[ext_resource type="Texture2D" uid="uid://cgvralfntp5nx" path="res://assets/bubble_pixel.png" id="6_uusxv"]
 [ext_resource type="Texture2D" uid="uid://dirembnqevj0w" path="res://assets/Menu/Buttons/Close.png" id="6_png0w"]
+[ext_resource type="Texture2D" uid="uid://cgvralfntp5nx" path="res://assets/bubble_pixel.png" id="6_uusxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hr3"]
 size = Vector2(21, 26)
