@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://b16dy7akcdbao"]
+[gd_scene load_steps=33 format=3 uid="uid://b16dy7akcdbao"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_n8vtc"]
 [ext_resource type="Texture2D" uid="uid://dnwvu70rb7eur" path="res://assets/Main Characters/Mask Dude/Jump (32x32).png" id="2_0fyyh"]
 [ext_resource type="Texture2D" uid="uid://c2auw6yffv0j7" path="res://assets/Main Characters/Mask Dude/Idle (32x32).png" id="2_to8x6"]
 [ext_resource type="Texture2D" uid="uid://cclif7giv4h7j" path="res://assets/Main Characters/Mask Dude/Fall (32x32).png" id="3_7lbcf"]
 [ext_resource type="Texture2D" uid="uid://b5rn7qn3wh4rt" path="res://assets/Main Characters/Mask Dude/Run (32x32).png" id="4_7aapb"]
+[ext_resource type="Texture2D" uid="uid://cgvralfntp5nx" path="res://assets/bubble_pixel.png" id="6_uusxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hr3"]
 size = Vector2(21, 26)
@@ -199,6 +200,8 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwnn8"]
+
 [node name="Jugador" type="CharacterBody2D"]
 position = Vector2(234, 78)
 script = ExtResource("1_n8vtc")
@@ -217,3 +220,30 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_fi4ct")
 animation = &"run"
 autoplay = "idle"
+
+[node name="Jetpack Bubbles" type="Node2D" parent="."]
+position = Vector2(-234, -78)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Jetpack Bubbles"]
+material = SubResource("ShaderMaterial_uwnn8")
+position = Vector2(233, 96)
+amount = 50
+lifetime = 0.5
+speed_scale = 0.7
+randomness = 1.0
+texture = ExtResource("6_uusxv")
+emission_shape = 4
+emission_points = PackedVector2Array()
+emission_colors = PackedColorArray()
+spread = 52.27
+initial_velocity_max = 131.31
+angular_velocity_min = -720.0
+angular_velocity_max = -720.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+
+[node name="fuelLabel" type="Label" parent="."]
+offset_left = -96.0
+offset_top = -18.0
+offset_right = -27.0
+offset_bottom = 21.0
