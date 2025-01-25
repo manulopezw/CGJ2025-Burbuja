@@ -5,15 +5,28 @@ var SPEED = 100.0
 var JETPACK_SPEED = 25 #25
 var FUEL = 1
 var JETPACK_ON = false
+var CHARGE = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation_player = $AnimatedSprite2D
 
+var bullet_path = preload("res://bullet.tscn")
 
 func _physics_process(delta):
 	$"fuelLabel".text = "FUEL: " + str(FUEL)
+  $Label.text = "Charge: " + str(CHARGE)
 	velocity.y += gravity * delta
+  
+  # Handle BubbleGun
+  $Gun.look_at(get_global_mouse_position())
+	if Input.is_action_pressed("ui_accept"):
+		if CHARGE < 100:
+			CHARGE += 1
+	if Input.is_action_just_released("ui_accept"):
+		fire(CHARGE)
+		CHARGE = 0
+    
 	# Handle Jetpack.
 	if Input.is_action_pressed("ui_up") && is_on_floor() && FUEL < 50:
 		#Cargamos FUEL
@@ -42,3 +55,10 @@ func _physics_process(delta):
 			animation_player.play("idle")
 
 	move_and_slide()
+
+func fire(Charge:int):
+	var bullet = bullet_path.instantiate()
+	bullet.initial_Speed *= float(Charge)/100
+	bullet.pos = $Gun.global_position + Vector2(16,0).rotated($Gun.rotation)
+	bullet.rota = $Gun.global_rotation
+	get_parent().add_child(bullet)

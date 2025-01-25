@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=33 format=3 uid="uid://b16dy7akcdbao"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_n8vtc"]
@@ -6,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cclif7giv4h7j" path="res://assets/Main Characters/Mask Dude/Fall (32x32).png" id="3_7lbcf"]
 [ext_resource type="Texture2D" uid="uid://b5rn7qn3wh4rt" path="res://assets/Main Characters/Mask Dude/Run (32x32).png" id="4_7aapb"]
 [ext_resource type="Texture2D" uid="uid://cgvralfntp5nx" path="res://assets/bubble_pixel.png" id="6_uusxv"]
+[ext_resource type="Texture2D" uid="uid://dirembnqevj0w" path="res://assets/Menu/Buttons/Close.png" id="6_png0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hr3"]
 size = Vector2(21, 26)
@@ -207,7 +209,7 @@ position = Vector2(234, 78)
 script = ExtResource("1_n8vtc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_n3hr3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -247,3 +249,16 @@ offset_left = -96.0
 offset_top = -18.0
 offset_right = -27.0
 offset_bottom = 21.0
+
+[node name="Gun" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+position = Vector2(16, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_png0w")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -36.0
+offset_right = -10.0
+offset_bottom = -13.0
