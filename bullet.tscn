@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0tnjyogwe7hl"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_fhxmf"]
+[ext_resource type="Texture2D" uid="uid://d3opvod2on6hu" path="res://assets/Items/Fruits/Cherries.png" id="2_0nqrr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5dtmd"]
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_fhxmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0nqrr")
+hframes = 17
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5dtmd")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
