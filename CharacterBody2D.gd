@@ -15,18 +15,18 @@ var bullet_path = preload("res://bullet.tscn")
 
 func _physics_process(delta):
 	$"fuelLabel".text = "FUEL: " + str(FUEL)
-  $Label.text = "Charge: " + str(CHARGE)
+	$Label.text = "Charge: " + str(CHARGE)
 	velocity.y += gravity * delta
   
   # Handle BubbleGun
-  $Gun.look_at(get_global_mouse_position())
+	$Gun.look_at(get_global_mouse_position())
 	if Input.is_action_pressed("ui_accept"):
 		if CHARGE < 100:
 			CHARGE += 1
 	if Input.is_action_just_released("ui_accept"):
 		fire(CHARGE)
 		CHARGE = 0
-    
+	
 	# Handle Jetpack.
 	if Input.is_action_pressed("ui_up") && is_on_floor() && FUEL < 50:
 		#Cargamos FUEL
