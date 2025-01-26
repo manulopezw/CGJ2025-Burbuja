@@ -16,6 +16,7 @@ void fragment() {
 	vec2 noise = 2.0 * texture(noise_texture, uv).rg - vec2(1.0);
 	COLOR = texture(TEXTURE, UV);
 	COLOR *= texture(screen_texture, SCREEN_UV + noise * distortion);
+	
 		// Called for every pixel the material is visible on.
 }
 
