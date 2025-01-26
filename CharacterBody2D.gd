@@ -20,6 +20,7 @@ func _physics_process(delta):
   
   # Handle BubbleGun
 	if !alive:
+		move_and_slide()
 		return
 	$Gun.look_at(get_global_mouse_position())
 	if Input.is_action_pressed("ui_down"):

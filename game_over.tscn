@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_1bnbg"]
 
-[sub_resource type="FontVariation" id="FontVariation_2xr1i"]
+[sub_resource type="FontVariation" id="FontVariation_bo7pq"]
 
 [sub_resource type="Theme" id="Theme_ynash"]
-default_font = SubResource("FontVariation_2xr1i")
+default_font = SubResource("FontVariation_bo7pq")
 default_font_size = 50
 
 [node name="Game_over" type="Control"]
@@ -28,6 +28,7 @@ text = "GAME OVER"
 
 [node name="Retry" type="Button" parent="."]
 top_level = true
+layout_mode = 0
 offset_left = 249.0
 offset_top = 222.0
 offset_right = 401.0
