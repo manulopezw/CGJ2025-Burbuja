@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btnmo7uomkipc" path="res://assets/Background/FondoP1.png" id="4_2c7g7"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="4_hygys"]
 [ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="5_uiacn"]
-[ext_resource type="PackedScene" uid="uid://0dmjcye5q48h" path="res://water_body.tscn" id="6_b3q5d"]
+[ext_resource type="PackedScene" path="res://water_body.tscn" id="6_b3q5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0j7m7"]
 texture = ExtResource("3_k8dkd")
