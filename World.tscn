@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btnmo7uomkipc" path="res://assets/Background/FondoP1.png" id="4_2c7g7"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="4_hygys"]
 [ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="5_uiacn"]
-[ext_resource type="Texture2D" uid="uid://bhghkrpqeol6i" path="res://assets/Bubble_pixel_painted.png" id="5_gnrjk"]
 [ext_resource type="PackedScene" uid="uid://0dmjcye5q48h" path="res://water_body.tscn" id="6_b3q5d"]
-[ext_resource type="Script" path="res://water_body.gd" id="7_lno0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0j7m7"]
 texture = ExtResource("3_k8dkd")
@@ -390,7 +388,6 @@ tile_map_data = PackedByteArray("AAAXABMAAAAHAAEAAAAYABMAAAAHAAEAAAAZABMAAAAHAAE
 tile_set = SubResource("TileSet_pe6tu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
@@ -444,5 +441,4 @@ offset_right = 53.0
 offset_bottom = 349.0
 
 [node name="Water_body" parent="." instance=ExtResource("6_b3q5d")]
-position = Vector2(210, 21)
-script = ExtResource("7_lno0h")
+position = Vector2(-32, 346)
