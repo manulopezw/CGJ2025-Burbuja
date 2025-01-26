@@ -7,7 +7,7 @@
 [ext_resource type="Shader" path="res://bubble.gdshader" id="4_hygys"]
 [ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="5_uiacn"]
 [ext_resource type="PackedScene" uid="uid://0dmjcye5q48h" path="res://water_body.tscn" id="6_b3q5d"]
-[ext_resource type="PackedScene" uid="uid://ccab8cgcageto" path="res://game_over.tscn" id="7_braoc"]
+[ext_resource type="PackedScene" path="res://game_over.tscn" id="7_braoc"]
 [ext_resource type="Texture2D" uid="uid://cqbgxoxtacgvh" path="res://assets/Terrain/FondoNuevo2.png" id="9_tgdlb"]
 [ext_resource type="AudioStream" uid="uid://dfj5y5mwggkji" path="res://assets/Sounds/Música como se llama el jueguito.wav" id="10_qipvo"]
 
@@ -149,6 +149,18 @@ texture = ExtResource("5_uiacn")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource("1_irdxi")
+
+[node name="MaxScoreLabel" type="Label" parent="GUI"]
+offset_left = 507.0
+offset_top = 2.0
+offset_right = 547.0
+offset_bottom = 25.0
+
+[node name="ScoreLabel" type="Label" parent="GUI"]
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 24.0
 
 [node name="GunBar" type="ProgressBar" parent="GUI"]
 offset_left = 13.0
