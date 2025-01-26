@@ -39,7 +39,7 @@ func set_collision_width(value):
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Layer0":
+	if body.name == "Layer0" || body.name == "Bullet":
 		return
 	if body == colided_with:
 		return
@@ -48,5 +48,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var speed = body.velocity.y * motion_factor
 	emit_signal("splash",index,speed)
 	body.velocity = body.velocity * 0.1
-	body.gravity *= 0.1
-	pass # Replace with function body.
+	#body.gravity *= 0.1
+	#pass # Replace with function body.
