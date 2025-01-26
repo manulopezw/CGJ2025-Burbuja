@@ -6,6 +6,7 @@ var JETPACK_SPEED = 25 #25
 var FUEL = 1
 var JETPACK_ON = false
 var CHARGE = 0
+var alive = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -18,11 +19,13 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
   
   # Handle BubbleGun
+	if !alive:
+		return
 	$Gun.look_at(get_global_mouse_position())
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_down"):
 		if CHARGE < 100:
 			CHARGE += 1
-	if Input.is_action_just_released("ui_accept"):
+	if Input.is_action_just_released("ui_down"):
 		fire(CHARGE)
 		CHARGE = 0
 	

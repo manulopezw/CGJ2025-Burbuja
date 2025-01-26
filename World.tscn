@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cft6wms2mdkei"]
+[gd_scene load_steps=15 format=4 uid="uid://cft6wms2mdkei"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_irdxi"]
 [ext_resource type="PackedScene" uid="uid://b16dy7akcdbao" path="res://jugador.tscn" id="1_nrx7l"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://btnmo7uomkipc" path="res://assets/Background/FondoP1.png" id="4_2c7g7"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="4_hygys"]
 [ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="5_uiacn"]
+
+[ext_resource type="PackedScene" uid="uid://0dmjcye5q48h" path="res://water_body.tscn" id="6_b3q5d"]
+[ext_resource type="PackedScene" uid="uid://ccab8cgcageto" path="res://game_over.tscn" id="7_braoc"]
 [ext_resource type="PackedScene" path="res://water_body.tscn" id="6_b3q5d"]
 [ext_resource type="Texture2D" uid="uid://cqbgxoxtacgvh" path="res://assets/Terrain/FondoNuevo2.png" id="9_tgdlb"]
 
@@ -118,6 +121,9 @@ sources/0 = SubResource("TileSetAtlasSource_4ahmd")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Game_over" parent="." instance=ExtResource("7_braoc")]
+visible = false
+
 [node name="Jugador" parent="." instance=ExtResource("1_nrx7l")]
 position = Vector2(320, 180)
 
@@ -139,6 +145,7 @@ position = Vector2(320, 180)
 texture = ExtResource("4_2c7g7")
 
 [node name="BubblePixel" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_ho646")
 position = Vector2(78, 253)
 scale = Vector2(0.14, 0.14)
