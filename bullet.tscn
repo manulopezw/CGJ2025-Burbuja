@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0tnjyogwe7hl"]
+[gd_scene load_steps=16 format=3 uid="uid://c4o64e5hup500"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_fhxmf"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="2_7isjt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b47nxjp8bsb8v" path="res://assets/BurbujaExp1.png" id="4_cejda"]
 [ext_resource type="Texture2D" uid="uid://cykdi82geyinv" path="res://assets/BurbujaExp2.png" id="5_xt76s"]
 [ext_resource type="Texture2D" uid="uid://cu1pcggs1b7tr" path="res://assets/BurbujaExp3.png" id="6_l0thc"]
+[ext_resource type="AudioStream" uid="uid://bpo5ag3y334ks" path="res://assets/Sounds/Plop!.wav" id="9_rfk1r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3spr4"]
 animations = [{
@@ -48,11 +49,9 @@ shader_parameter/distortion = 0.01
 shader_parameter/speed = Vector2(0.4, 0.1)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_xma15")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7o4j7"]
-radius = 14.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34m7p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wspog"]
-radius = 14.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ty1d1"]
 
 [node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_fhxmf")
@@ -68,7 +67,9 @@ material = SubResource("ShaderMaterial_buvhw")
 texture = ExtResource("3_joxvb")
 
 [node name="EstadoSolido" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7o4j7")
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_34m7p")
 disabled = true
 one_way_collision_margin = 10.0
 
@@ -79,7 +80,12 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_wspog")
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ty1d1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_rfk1r")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

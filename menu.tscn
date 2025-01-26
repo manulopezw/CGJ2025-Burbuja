@@ -1,7 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs2qrmkici7hi"]
+[gd_scene load_steps=10 format=3 uid="uid://cs2qrmkici7hi"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_l6kf3"]
 [ext_resource type="Texture2D" uid="uid://cfrajuvf866mj" path="res://assets/Background/Blue.png" id="2_7hw14"]
+[ext_resource type="Texture2D" uid="uid://cqbgxoxtacgvh" path="res://assets/Terrain/FondoNuevo2.png" id="3_dcji7"]
+[ext_resource type="Texture2D" uid="uid://stb3qiwihs8r" path="res://assets/Main Characters/BurbleHamster/PJ256.png" id="3_fxq8d"]
+[ext_resource type="Texture2D" uid="uid://d2lccy2gbgoj3" path="res://assets/Main Characters/BurbleHamster/Weapon256.png" id="4_xakt6"]
+[ext_resource type="Texture2D" uid="uid://cxjpvmqsdutl7" path="res://assets/BurbujaExp.png" id="5_8xnrw"]
+
+[sub_resource type="SystemFont" id="SystemFont_q24hp"]
+font_weight = 650
+
+[sub_resource type="FontVariation" id="FontVariation_2xr1i"]
+base_font = SubResource("SystemFont_q24hp")
+spacing_glyph = 13
+spacing_space = 3
+
+[sub_resource type="Theme" id="Theme_jb14h"]
+default_font = SubResource("FontVariation_2xr1i")
+default_font_size = 50
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_l6kf3")
@@ -11,6 +27,19 @@ offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_7hw14")
 
+[node name="FondoNuevo2" type="Sprite2D" parent="."]
+modulate = Color(0.396889, 0.396889, 0.396889, 1)
+position = Vector2(795, 260)
+scale = Vector2(4.84766, 4.84766)
+texture = ExtResource("3_dcji7")
+
+[node name="How to play" type="Button" parent="."]
+offset_left = 243.0
+offset_top = 173.0
+offset_right = 395.0
+offset_bottom = 235.0
+text = "HOW TO PLAY"
+
 [node name="Play" type="Button" parent="."]
 offset_left = 242.0
 offset_top = 90.0
@@ -19,11 +48,123 @@ offset_bottom = 152.0
 text = "PLAY"
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 246.0
-offset_top = 208.0
-offset_right = 398.0
-offset_bottom = 270.0
+offset_left = 242.0
+offset_top = 251.0
+offset_right = 394.0
+offset_bottom = 313.0
 text = "EXIT"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 55.0
+offset_top = 15.0
+offset_right = 612.0
+offset_bottom = 89.0
+theme = SubResource("Theme_jb14h")
+text = "Bubble Climber"
+
+[node name="Pj256" type="Sprite2D" parent="."]
+position = Vector2(531, 258)
+texture = ExtResource("3_fxq8d")
+
+[node name="Weapon256" type="Sprite2D" parent="."]
+position = Vector2(529, 247)
+texture = ExtResource("4_xakt6")
+
+[node name="BurbujaExp" type="Sprite2D" parent="."]
+position = Vector2(22, 109)
+scale = Vector2(0.378906, 0.378906)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp"]
+position = Vector2(240.165, 5.27834)
+scale = Vector2(0.488664, 0.488664)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp2" type="Sprite2D" parent="BurbujaExp/BurbujaExp"]
+position = Vector2(-10.8015, -561.683)
+scale = Vector2(1.33149, 1.33149)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp/BurbujaExp2"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp3" type="Sprite2D" parent="BurbujaExp/BurbujaExp"]
+position = Vector2(2840.82, 334.85)
+scale = Vector2(1.226, 1.226)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp/BurbujaExp3"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp2" type="Sprite2D" parent="BurbujaExp/BurbujaExp/BurbujaExp3"]
+position = Vector2(-10.8015, -561.683)
+scale = Vector2(1.33149, 1.33149)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp/BurbujaExp3/BurbujaExp2"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp2" type="Sprite2D" parent="BurbujaExp"]
+position = Vector2(102.928, 327.258)
+scale = Vector2(0.581206, 0.581206)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp2"]
+position = Vector2(240.165, 5.27834)
+scale = Vector2(0.488664, 0.488664)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp2" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp"]
+position = Vector2(-10.8015, -561.683)
+scale = Vector2(1.33149, 1.33149)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp/BurbujaExp2"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp3" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp"]
+position = Vector2(2840.82, 334.85)
+scale = Vector2(1.226, 1.226)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp/BurbujaExp3"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp2" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp/BurbujaExp3"]
+position = Vector2(-10.8015, -561.683)
+scale = Vector2(1.33149, 1.33149)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp" type="Sprite2D" parent="BurbujaExp/BurbujaExp2/BurbujaExp/BurbujaExp3/BurbujaExp2"]
+position = Vector2(2381.75, -567.084)
+scale = Vector2(1.39478, 1.39478)
+texture = ExtResource("5_8xnrw")
+
+[node name="BurbujaExp2" type="Sprite2D" parent="."]
+position = Vector2(122, 373)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_8xnrw")
+
+[connection signal="pressed" from="How to play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

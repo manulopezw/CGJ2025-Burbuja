@@ -33,20 +33,24 @@ func initialize(x_position, id):
 	
 func set_collision_width(value):
 	var extents = collision.shape.get_size()
-	var new_extents = Vector2(value/2, extents.y)
+	var new_extents = Vector2(value/1.5, extents.y)
 	collision.shape.set_size(new_extents)
 	pass
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Layer0" || body.name == "Bullet":
+	if body.name == "TileMapLayer" || body.name == "Bullet":
 		return
 	if body == colided_with:
 		return
 	colided_with = body
-	print("GAME OVER")
+	# Set game_over text
+	var game_over = $"../../GUI/Game_over"
+	game_over.visible = true
+	#get_node("$Game_over").visible = true
+	body.alive = false
 	var speed = body.velocity.y * motion_factor
 	emit_signal("splash",index,speed)
 	body.velocity = body.velocity * 0.1
-	#body.gravity *= 0.1
-	#pass # Replace with function body.
+	body.gravity *= 0.01
+	pass # Replace with function body.
