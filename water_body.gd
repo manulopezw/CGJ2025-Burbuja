@@ -8,6 +8,9 @@ extends Node2D
 @export var d = 0.03
 @export var spread = 0.2
 
+@export var rise_speed : float = -10.0
+
+
 #the spring array
 var springs = []
 var passes = 12
@@ -15,7 +18,7 @@ var passes = 12
 #distance in pixel between each spring
 @export var distance_between_springs = 32
 #number of springs in the scene
-@export var spring_number = 16
+@export var spring_number = 30
 
 #total water body lenght
 var water_lenght = distance_between_springs * spring_number;
@@ -80,9 +83,9 @@ func _ready():
 	water_body_area.position = rect_position
 	rectangle.set_size(rect_extents)
 	collisionShape.set_shape(rectangle)
-
-func _physics_process(delta):
 	
+func _physics_process(delta):
+	translate(Vector2(0, rise_speed * delta))
 	#moves all the springs accordingly
 	for i in springs:
 		i.water_update(k,d)
@@ -185,5 +188,4 @@ func _on_Water_Body_Area_body_entered(body):
 
 
 func _on_water_body_area_body_entered(body: Node2D) -> void:
-	#Aca detecto cuando un objeto ingresa al agua
 	pass # Replace with function body.
