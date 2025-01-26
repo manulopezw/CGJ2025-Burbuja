@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	queue_free()
+	$AnimatedSprite2D.play('explode')
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -44,4 +44,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			return
 		else:
 			print('exploto')
-			queue_free()
+			$AnimatedSprite2D.play('explode')
+			
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == 'explode':
+		
+		queue_free()

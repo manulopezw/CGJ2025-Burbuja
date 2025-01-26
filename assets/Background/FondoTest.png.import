@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bub4m06wcmiv0"
-path="res://.godot/imported/PJLeft.png-6d8564a8a9d11a57b2d5a60876a8357b.ctex"
+uid="uid://blighyrm44m3d"
+path="res://.godot/imported/FondoTest.png-df047008d0a24365fd9b14e036af5734.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Characters/BurbleHamster/PJLeft.png"
-dest_files=["res://.godot/imported/PJLeft.png-6d8564a8a9d11a57b2d5a60876a8357b.ctex"]
+source_file="res://assets/Background/FondoTest.png"
+dest_files=["res://.godot/imported/FondoTest.png-df047008d0a24365fd9b14e036af5734.ctex"]
 
 [params]
 

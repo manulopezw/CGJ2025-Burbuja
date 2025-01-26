@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vdu0jxjcbm4c"
-path="res://.godot/imported/Arm.png-620da22a69996215869fd993de04878a.ctex"
+uid="uid://cykdi82geyinv"
+path="res://.godot/imported/BurbujaExp2.png-0ed2504a3e3b1e0ac2186a43950d3a85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Characters/BurbleHamster/Arm.png"
-dest_files=["res://.godot/imported/Arm.png-620da22a69996215869fd993de04878a.ctex"]
+source_file="res://assets/BurbujaExp2.png"
+dest_files=["res://.godot/imported/BurbujaExp2.png-0ed2504a3e3b1e0ac2186a43950d3a85.ctex"]
 
 [params]
 
