@@ -1,8 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4o64e5hup500"]
+[gd_scene load_steps=15 format=3 uid="uid://d0tnjyogwe7hl"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_fhxmf"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="2_7isjt"]
 [ext_resource type="Texture2D" uid="uid://bhghkrpqeol6i" path="res://assets/Bubble_pixel_painted.png" id="3_joxvb"]
+[ext_resource type="Texture2D" uid="uid://cxjpvmqsdutl7" path="res://assets/BurbujaExp.png" id="3_sstlp"]
+[ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="3_t34tb"]
+[ext_resource type="Texture2D" uid="uid://b47nxjp8bsb8v" path="res://assets/BurbujaExp1.png" id="4_cejda"]
+[ext_resource type="Texture2D" uid="uid://cykdi82geyinv" path="res://assets/BurbujaExp2.png" id="5_xt76s"]
+[ext_resource type="Texture2D" uid="uid://cu1pcggs1b7tr" path="res://assets/BurbujaExp3.png" id="6_l0thc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3spr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t34tb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sstlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cejda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xt76s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l0thc")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 16.0
+}]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_u7jj7"]
 
@@ -15,21 +48,39 @@ shader_parameter/distortion = 0.01
 shader_parameter/speed = Vector2(0.4, 0.1)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_xma15")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5dtmd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7o4j7"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wspog"]
+radius = 14.0
 
 [node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_fhxmf")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_3spr4")
+animation = &"explode"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_buvhw")
 texture = ExtResource("3_joxvb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_5dtmd")
+[node name="EstadoSolido" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7o4j7")
 disabled = true
+one_way_collision_margin = 10.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wspog")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

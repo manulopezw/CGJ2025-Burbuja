@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://stb3qiwihs8r" path="res://assets/Main Characters/BurbleHamster/PJ256.png" id="2_xvwgg"]
 [ext_resource type="Texture2D" uid="uid://bacemhdech2ek" path="res://assets/Main Characters/BurbleHamster/Step1.png" id="3_1ch6c"]
 [ext_resource type="Texture2D" uid="uid://bvkqja5odmpru" path="res://assets/Main Characters/BurbleHamster/Step2.png" id="4_6lo2r"]
+[ext_resource type="Texture2D" uid="uid://dirembnqevj0w" path="res://assets/Menu/Buttons/Close.png" id="6_png0w"]
 [ext_resource type="Texture2D" uid="uid://cgvralfntp5nx" path="res://assets/bubble_pixel.png" id="6_uusxv"]
-[ext_resource type="Texture2D" uid="uid://d2lccy2gbgoj3" path="res://assets/Main Characters/BurbleHamster/Weapon256.png" id="7_u6rku"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5tc3"]
 
@@ -52,16 +52,16 @@ animations = [{
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_n8vtc")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("CapsuleShape2D_t5tc3")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -64)
+offset = Vector2(0, -36)
 limit_left = 0
 limit_right = 640
 editor_draw_limits = true
 editor_draw_drag_margin = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("CapsuleShape2D_t5tc3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -69,7 +69,6 @@ scale = Vector2(0.14, 0.14)
 sprite_frames = SubResource("SpriteFrames_fi4ct")
 animation = &"run"
 autoplay = "idle"
-flip_h = true
 
 [node name="Jetpack Bubbles" type="Node2D" parent="."]
 
@@ -91,16 +90,9 @@ scale_amount_min = 0.2
 scale_amount_max = 0.4
 
 [node name="Gun" type="Node2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -5)
 
-[node name="Weapon" type="Sprite2D" parent="Gun"]
-rotation = -0.888373
-scale = Vector2(0.14, 0.14)
-texture = ExtResource("7_u6rku")
-offset = Vector2(8, 24)
-flip_h = true
-
-[node name="BulletSpawn" type="Node2D" parent="Gun"]
-position = Vector2(23, -3)
-rotation = -0.888373
-scale = Vector2(0.14, 0.14)
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+position = Vector2(18, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_png0w")
