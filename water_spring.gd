@@ -39,7 +39,7 @@ func set_collision_width(value):
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "TileMapLayer":
+	if body.name == "TileMapLayer" || body.name == "Bullet":
 		return
 	if body == colided_with:
 		return

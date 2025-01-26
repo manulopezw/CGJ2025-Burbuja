@@ -36,12 +36,14 @@ func _physics_process(delta):
 		FUEL += 1
 	if Input.is_action_just_released("ui_up"):
 		JETPACK_ON = true
+		$AudioStreamPlayer.play()
 	if JETPACK_ON && FUEL > 0:
 		velocity.y -= JETPACK_SPEED
 		FUEL -= 1
 		$"Jetpack Bubbles/CPUParticles2D".emitting = true
 	else:
 		JETPACK_ON = false
+		$AudioStreamPlayer.stop()
 		$"Jetpack Bubbles/CPUParticles2D".emitting = false		
 
 	# Get the input direction and handle the movement/deceleration.
