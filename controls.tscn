@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://8r07vgy5ap1p"]
+
+[ext_resource type="Script" path="res://controls.gd" id="1_3fp1s"]
+[ext_resource type="Texture2D" uid="uid://cqbgxoxtacgvh" path="res://assets/Terrain/FondoNuevo2.png" id="1_a1v5k"]
+[ext_resource type="Texture2D" uid="uid://djdp8q5c872xs" path="res://assets/Other/Arrow Down.png" id="2_wlbuy"]
+[ext_resource type="Texture2D" uid="uid://b2hepqryoddgi" path="res://assets/Other/Arrow Up.png" id="3_uqk2n"]
+[ext_resource type="Texture2D" uid="uid://nkl7jhei8ryv" path="res://assets/Other/Arrow Left.png" id="4_4h338"]
+[ext_resource type="Texture2D" uid="uid://cpvlpr20aphdk" path="res://assets/Other/Arrow Right.png" id="5_g6b1l"]
+[ext_resource type="Texture2D" uid="uid://cb1yeux43f8ew" path="res://assets/Other/LMB.png" id="6_rrixx"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3fp1s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.219501, 0.219501, 0.219501, 1)
+layout_mode = 0
+offset_left = -135.0
+offset_top = -168.0
+offset_right = 1589.0
+offset_bottom = 694.0
+texture = ExtResource("1_a1v5k")
+
+[node name="ArrowDown" type="Sprite2D" parent="."]
+position = Vector2(38, 154)
+scale = Vector2(0.238281, 0.238281)
+texture = ExtResource("2_wlbuy")
+
+[node name="ArrowUp" type="Sprite2D" parent="."]
+position = Vector2(39, 223)
+scale = Vector2(0.256836, 0.256836)
+texture = ExtResource("3_uqk2n")
+
+[node name="ArrowLeft" type="Sprite2D" parent="."]
+position = Vector2(36.5, 70)
+scale = Vector2(0.246094, 0.246094)
+texture = ExtResource("4_4h338")
+
+[node name="ArrowRight" type="Sprite2D" parent="."]
+position = Vector2(151.5, 72)
+scale = Vector2(0.253906, 0.253906)
+texture = ExtResource("5_g6b1l")
+
+[node name="Lmb" type="Sprite2D" parent="."]
+position = Vector2(37, 295)
+scale = Vector2(0.269531, 0.269531)
+texture = ExtResource("6_rrixx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 82.5
+offset_top = 33.0
+offset_right = 126.5
+offset_bottom = 106.0
+theme_override_font_sizes/normal_font_size = 50
+text = "+"
+tab_size = 7
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+offset_left = 69.0
+offset_top = 263.0
+offset_right = 616.0
+offset_bottom = 336.0
+theme_override_font_sizes/normal_font_size = 40
+text = ": Move to aim Bubble Gun
+"
+tab_size = 7
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 74.0
+offset_top = 194.0
+offset_right = 621.0
+offset_bottom = 267.0
+theme_override_font_sizes/normal_font_size = 40
+text = ": Hold to use Bubble Jetpack"
+tab_size = 7
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 73.0
+offset_top = 124.0
+offset_right = 594.0
+offset_bottom = 197.0
+theme_override_font_sizes/normal_font_size = 40
+text = ": Hold to use Bubble Gun"
+tab_size = 7
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 192.5
+offset_top = 35.0
+offset_right = 492.5
+offset_bottom = 108.0
+theme_override_font_sizes/normal_font_size = 40
+text = ": Movement"
+tab_size = 7
+
+[node name="Back" type="Button" parent="."]
+top_level = true
+offset_left = 456.0
+offset_top = 30.0
+offset_right = 608.0
+offset_bottom = 92.0
+text = "Go back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

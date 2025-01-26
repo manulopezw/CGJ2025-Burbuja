@@ -33,6 +33,13 @@ position = Vector2(795, 260)
 scale = Vector2(4.84766, 4.84766)
 texture = ExtResource("3_dcji7")
 
+[node name="How to play" type="Button" parent="."]
+offset_left = 243.0
+offset_top = 173.0
+offset_right = 395.0
+offset_bottom = 235.0
+text = "HOW TO PLAY"
+
 [node name="Play" type="Button" parent="."]
 offset_left = 242.0
 offset_top = 90.0
@@ -41,10 +48,10 @@ offset_bottom = 152.0
 text = "PLAY"
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 246.0
-offset_top = 208.0
-offset_right = 398.0
-offset_bottom = 270.0
+offset_left = 242.0
+offset_top = 251.0
+offset_right = 394.0
+offset_bottom = 313.0
 text = "EXIT"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -158,5 +165,6 @@ position = Vector2(122, 373)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_8xnrw")
 
+[connection signal="pressed" from="How to play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
