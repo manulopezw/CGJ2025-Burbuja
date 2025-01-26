@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	$AnimatedSprite2D.play('explode')
+	$AudioStreamPlayer.play()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -45,6 +46,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		else:
 			print('exploto')
 			$AnimatedSprite2D.play('explode')
+			$AudioStreamPlayer.play()
 			
 
 

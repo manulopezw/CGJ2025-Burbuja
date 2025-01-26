@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cft6wms2mdkei"]
+[gd_scene load_steps=16 format=4 uid="uid://cft6wms2mdkei"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_irdxi"]
 [ext_resource type="PackedScene" uid="uid://b16dy7akcdbao" path="res://jugador.tscn" id="1_nrx7l"]
@@ -6,11 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://btnmo7uomkipc" path="res://assets/Background/FondoP1.png" id="4_2c7g7"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="4_hygys"]
 [ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="5_uiacn"]
-
-[ext_resource type="PackedScene" uid="uid://0dmjcye5q48h" path="res://water_body.tscn" id="6_b3q5d"]
-[ext_resource type="PackedScene" uid="uid://ccab8cgcageto" path="res://game_over.tscn" id="7_braoc"]
 [ext_resource type="PackedScene" path="res://water_body.tscn" id="6_b3q5d"]
+[ext_resource type="PackedScene" path="res://game_over.tscn" id="7_braoc"]
 [ext_resource type="Texture2D" uid="uid://cqbgxoxtacgvh" path="res://assets/Terrain/FondoNuevo2.png" id="9_tgdlb"]
+[ext_resource type="AudioStream" uid="uid://dfj5y5mwggkji" path="res://assets/Sounds/Música como se llama el jueguito.wav" id="10_qipvo"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b4jrk"]
 
@@ -187,3 +186,7 @@ tile_set = SubResource("TileSet_uxlix")
 
 [node name="Water_body" parent="." instance=ExtResource("6_b3q5d")]
 position = Vector2(-32, 346)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qipvo")
+autoplay = true
