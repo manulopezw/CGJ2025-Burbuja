@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cobjbd4kvn3pf"
-path="res://.godot/imported/White-noise-mv255-240x180.png-e077100e592d4d15f05121f72a683d80.ctex"
+uid="uid://b3vbeognnnk03"
+path="res://.godot/imported/joint.png-316ac331f14ce49a0dba1265b2581ea3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/White-noise-mv255-240x180.png"
-dest_files=["res://.godot/imported/White-noise-mv255-240x180.png-e077100e592d4d15f05121f72a683d80.ctex"]
+source_file="res://assets/joint.png"
+dest_files=["res://.godot/imported/joint.png-316ac331f14ce49a0dba1265b2581ea3.ctex"]
 
 [params]
 
