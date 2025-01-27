@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://0dmjcye5q48h"]
+[gd_scene load_steps=10 format=3 uid="uid://b5xen6r0q3dml"]
 
 [ext_resource type="Shader" path="res://bubble.gdshader" id="1_6pklt"]
 [ext_resource type="Script" path="res://water_body.gd" id="1_vby7l"]
-[ext_resource type="Texture2D" uid="uid://cfrajuvf866mj" path="res://assets/Background/Blue.png" id="2_ldkw4"]
+[ext_resource type="Texture2D" uid="uid://dvub3dc6v78ko" path="res://assets/Background/Blue.png" id="2_ldkw4"]
 [ext_resource type="Script" path="res://smooth_path_modified.gd" id="4_ncsij"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6wiri"]

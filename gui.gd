@@ -14,7 +14,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(player.position.y)
 	# Si el jugador ha ascendido desde la posición 0, empieza a contar el puntaje
 	score =  round(initial_position.distance_to(player.global_position) / 100 )
 		# Si el puntaje actual es mayor que el puntaje máximo, lo actualizamos

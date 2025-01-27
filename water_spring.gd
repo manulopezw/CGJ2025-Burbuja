@@ -44,13 +44,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == colided_with:
 		return
 	colided_with = body
-	# Set game_over text
-	var game_over = $"../../GUI/Game_over"
-	game_over.visible = true
-	#get_node("$Game_over").visible = true
-	body.alive = false
-	var speed = body.velocity.y * motion_factor
-	emit_signal("splash",index,speed)
-	body.velocity = body.velocity * 0.1
-	body.gravity *= 0.01
-	pass # Replace with function body.
+
+	if(body.name == 'Jugador'):
+		# Set game_over text
+		var game_over = $"../../GUI/Game_over"
+		game_over.visible = true
+		body.alive = false
+		var speed = body.velocity.y * motion_factor
+		emit_signal("splash",index,speed)
+		body.velocity = body.velocity * 0.1
+		body.gravity *= 0.01

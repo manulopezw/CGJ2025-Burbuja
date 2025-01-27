@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://btnmo7uomkipc" path="res://assets/Background/FondoP1.png" id="4_2c7g7"]
 [ext_resource type="Shader" path="res://bubble.gdshader" id="4_hygys"]
 [ext_resource type="Texture2D" uid="uid://e37kudrbmi0f" path="res://assets/Burbuja.png" id="5_uiacn"]
-[ext_resource type="PackedScene" uid="uid://0dmjcye5q48h" path="res://water_body.tscn" id="6_b3q5d"]
-[ext_resource type="PackedScene" path="res://game_over.tscn" id="7_braoc"]
+[ext_resource type="PackedScene" uid="uid://b5xen6r0q3dml" path="res://water_body.tscn" id="6_b3q5d"]
+[ext_resource type="PackedScene" uid="uid://ccab8cgcageto" path="res://game_over.tscn" id="7_braoc"]
 [ext_resource type="Texture2D" uid="uid://cqbgxoxtacgvh" path="res://assets/Terrain/FondoNuevo2.png" id="9_tgdlb"]
-[ext_resource type="AudioStream" uid="uid://dfj5y5mwggkji" path="res://assets/Sounds/Música como se llama el jueguito.wav" id="10_qipvo"]
+[ext_resource type="AudioStream" uid="uid://dfj5y5mwggkji" path="res://assets/Sounds/BackgroundMusic.wav" id="10_qipvo"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b4jrk"]
 
@@ -121,7 +121,7 @@ sources/0 = SubResource("TileSetAtlasSource_4ahmd")
 [node name="Node2D" type="Node2D"]
 
 [node name="Jugador" parent="." instance=ExtResource("1_nrx7l")]
-position = Vector2(320, 180)
+position = Vector2(320, 247)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

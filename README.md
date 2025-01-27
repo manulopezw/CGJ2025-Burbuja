@@ -1,2 +1,1 @@
-# Brodah_Project
-Primer intento de juegardo con el broh
+Un emocionante juego de plataformas 2D donde debes escalar hacia arriba y evitar que el agua en ascenso te atrape. Usa tu ingenioso jetpack de burbujas para alcanzar nuevas alturas y tu pistola de burbujas para crear plataformas que te ayudarán a posicionarte estratégicamente mientras asciendes. ¡Piensa rápido y usa tus habilidades para escapar del agua y llegar a la cima!
